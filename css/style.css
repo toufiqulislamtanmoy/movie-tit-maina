@@ -207,6 +207,7 @@ body{
     background: #ffff;
     position: relative;
     width: 40rem;
+    height: 80vh;
     overflow-y: scroll;
     margin: 2rem;
     border-radius: 1rem;
