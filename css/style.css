@@ -290,4 +290,9 @@ body{
  }
 
 /*--End Card Preview Section--*/
-
+/* footer section  style*/
+.footer{
+    margin-top: 100px;
+    padding: 100px;
+    background-color: #444;
+}
