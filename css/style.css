@@ -290,9 +290,24 @@ body{
  }
 
 /*--End Card Preview Section--*/
-/* footer section  style*/
+/* Footer Color */
 .footer{
-    margin-top: 100px;
-    padding: 100px;
-    background-color: #444;
+    background-color: #0B0D17;
+    background-blend-mode: darken;
+}
+
+.footer-title{
+    text-align: center;
+    color: #FF5959;
+    font-family: 'Lobster';
+    padding-top: 25px;
+    font-size: 2em;
+}
+
+.footer-descp{
+    color: #D9DBE1;
+    font-family: 'Manrope';
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5em;
 }
