@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: all 0.1s linear;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+   overflow-x: hidden;
+   background-color: #EEEEEE;
+}
+/******Navigation Bar Style Start*********/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EEEEEE;
+    height: 6rem;
+    padding: 0 4.8rem;
+}
+
+.header .logo{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    cursor: pointer;
+}
+
+.header .logo span{
+    font-size: 26px;
+    color:#F15B22;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+}
+
+.nav-link:link,
+.nav-link:visited{
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.nav-link:hover,
+.nav-link:active{
+    color: #F15B22;
+    transition: 1s;
+}
+
+.mobile-nav-icon{
+    height: 2rem;
+    width: 3rem;
+    color: black;
+}
+
+.mobile-nav-btn{
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon[name="close-outline"]{
+    display: none;
+}
+
+@media(max-width:62em){
+    .mobile-nav-btn{
+        display: block;
+        z-index: 420;
+    }
+    .header{
+        position: relative;
+    }
+    .navbar{
+        width: 42%;
+        position: absolute;
+        background-color: #EEEEEE;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        transform: translateX(200%);
+        transition: all 1s linear;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .nav-list{
+        flex-direction: column;
+        text-align: left;
+        margin-left:2rem;
+        font-style:oblique;
+    }
+    .nav-link:link,
+    .nav-link:visited{
+        display: block;
+        padding: 1.2rem 1.2rem;
+    }
+    .active .navbar{
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .active .mobile-nav-icon[name="close-outline"]{
+        display: block;
+    }
+    .active .mobile-nav-icon[name="menu-outline"]{
+        display: none;
+    }
+}
+
+/******Navigation Bar Style End*********/
+
+
+/******--Start Card Section***********/
+.container{
+    max-width: 100%;
+    margin: 0;
+    padding: 3rem 2rem;
+}
+
+.container .title{
+    font-size: 3.5rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.container .movie-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    gap: 3rem;
+}
+.container .movie-container .movie{
+    text-align: center;
+    padding: 3rem 1rem;
+    box-shadow: 0.5rem .1rem 1rem;
+    outline: .2rem solid #ccc;
+    outline-offset:-1.5rem ;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.container .movie-container .movie:hover{
+    box-shadow: 4px 4px 4px 8px rgb(0, 0, 0,0.8);
+    outline: 0 solid red;
+    outline-offset:-1.1rem ;
+}
+
+.container .movie-container .movie img{
+    height: 30rem;
+}
+
+.container .movie-container .movie:hover img{
+    transform: scale(0.9);
+}
+
+.container .movie-container .movie h3{
+    padding: 0.3rem 0;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.container .movie-container .movie:hover h3{
+    color: #26ae60;
+    transform: scale(1.1);
+}
+
+
+
+/******--End Card Section**********/
+/*--Start Card Preview Section--*/
+.movie-preview{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-preview .preview{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background: #ffff;
+    position: relative;
+    width: 40rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.movie-preview .preview.mactive{
+    display: inline-block;
+}
+
+.movie-preview .preview img{
+    height: 40rem;
+}
+
+.movie-preview .preview .fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #444;
+    font-size: 2rem;
+}
+
+.movie-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+}
+
+.movie-preview .preview h3{
+    color: #444;
+    padding: 2.4rem 0;
+    font-size: 2.5rem;
+}
+
+.product-preview .preview .stars{
+    padding: 1rem 0;
+}
+
+.product-preview .preview .stars i{
+    font-size: 1.5rem;
+    color: rgb(243, 222, 37);
+}
+
+.movie-preview .preview .imdb{
+    color: #26ae60;
+    font-size: 1.5rem;
+}
+
+.movie-preview .preview .cast{
+    line-height: 1.5;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+.movie-preview .preview .cast b{
+    
+    font-size: 1.6rem;
+}
+.movie-preview .preview .size{
+   padding: 1rem 0;
+   font-size: 2rem;
+   color: #26ae60;
+}
+
+.movie-preview .preview .btns{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+ }
+
+ .movie-preview .preview .btns a{
+     flex: 1 1 16rem;
+     padding: 1rem;
+     font-size: 1.8rem;
+     color: #444;
+     border: .1rem solid #444;
+ }
+
+ .movie-preview .preview .btns a:hover{
+    background: #26ae60;
+    color: white;
+ }
+
+/*--End Card Preview Section--*/
+
